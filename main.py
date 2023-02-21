@@ -27,7 +27,12 @@ def output_choice(name, cost):
 
 
 if __name__ == '__main__':
-    print("Welcome to the grocery store. Please fill your basket with items.")
+    print("Welcome to the grocery store. What is your name?")
+
+    full_name = input("Enter your name: ")
+    first_name = full_name.split(" ")[0]
+
+    print(f"Thanks {first_name}, it's nice to see you again. Please fill your basket with items.")
 
     menu = create_menu()
 
@@ -50,6 +55,7 @@ if __name__ == '__main__':
 
         if choice_idx < 0 or choice_idx >= len(FOOD_LIST):
             print("Error with the selected choice. Please choose from the list.")
+            continue
 
         choice_name = FOOD_LIST[choice_idx]
         choice_value = FOOD_PRICES[choice_name]
